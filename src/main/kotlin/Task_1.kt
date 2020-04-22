@@ -4,21 +4,10 @@
  * and consists of only letters, digits and underscores.
  */
 fun isValidIdentifier(s: String): Boolean {
-    if (s.isEmpty())
-        return false
-
-    if (!(s[0].isLetter() || s[0] == '_'))
-        return false
-
-    for (c in s.substring(1 until s.length)) {
-        if (!(c.isLetterOrDigit() || c == '_'))
-            return false
-    }
-
-    return true
+    return s.isNotEmpty() && """^[a-zA-Z_][a-zA-Z0-9_]*$""".toRegex().matches(s)
 }
 
-fun main(args: Array<String>) {
+fun main() {
     println(isValidIdentifier("name"))   // true
     println(isValidIdentifier("_name"))  // true
     println(isValidIdentifier("_12"))    // true
