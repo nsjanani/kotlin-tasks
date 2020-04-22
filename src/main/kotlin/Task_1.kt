@@ -11,7 +11,7 @@ fun isValidIdentifier(s: String): Boolean {
         return false
 
     for (c in s.substring(1 until s.length)) {
-        if (!(c.isLetter() || c.isDigit() || c == '_'))
+        if (!(c.isLetterOrDigit() || c == '_'))
             return false
     }
 
