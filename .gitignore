@@ -1,0 +1,14 @@
+target
+/build
+out/
+
+.settings
+.classpath
+.project
+.gradle/
+.idea/
+
+*.iml
+**/.DS_Store
+**/git.properties
+gradle.properties
